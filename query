@@ -1,0 +1,62 @@
+select titulo as encabezado, fecha_publicacion as publicado_en, estatus as estado 
+from posts; ## Puedes asiganrle alias a los encabezados 
+
+select count(*) as numero_posts
+from posts;## Te cuenta los registros de la tabla con un alias como encabezado 
+
+select * from usuarios
+	left join posts on usuarios.id = posts.usuario_id; 
+  
+  select * from usuarios
+	left join posts on usuarios.id = posts.usuario_id
+    where posts.usuario_id is null;
+    
+    select * from usuarios
+	inner join posts on usuarios.id = posts.usuario_id;
+  
+  	select * from usuarios
+	left join posts on usuarios.id = posts.usuario_id
+    union
+	select * from usuarios
+	right join posts on usuarios.id = posts.usuario_id;
+  ## Trae todo de ambas tablas 
+  
+  select * from usuarios
+	left join posts on usuarios.id = posts.usuario_id
+    where posts.usuario_id is null
+    union
+	select * from usuarios
+	right join posts on usuarios.id = posts.usuario_id
+    where posts.usuario_id is null;
+    
+    
+    select * from posts
+    where 	estatus != "activo";
+    
+    select * from posts
+    where titulo like '%escandalo%';
+    ## cadenas no son exactas 
+    
+    select * from posts
+    where fecha_publicacion < '2025-01-01';
+    ## Con fecha se utiliza comillas 
+    
+    select * from posts
+where fecha_publicacion between  '2025-01-01' and '2025-12-31';
+## Buscar en un rango de fechas 
+
+select * from posts
+where year(fecha_publicacion) between '2023' and '2024';
+
+select * from posts
+where month(fecha_publicacion) = '04' ;
+
+select * from posts
+where usuario_id is not null
+and estatus = 'activo'
+and id <50
+and categoria_id = 2;
+## Varias condiciones 
+
+select estatus, count(*) as posts_number from posts
+group by estatus ;

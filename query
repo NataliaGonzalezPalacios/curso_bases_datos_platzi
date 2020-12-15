@@ -60,3 +60,14 @@ and categoria_id = 2;
 
 select estatus, count(*) as posts_number from posts
 group by estatus ;
+
+select year(fecha_publicacion) as post_year, count(*) as posts_number 
+from posts
+group by post_year 
+order by post_year asc;
+
+select estatus, year(fecha_publicacion) as post_year, count(*) as posts_number 
+from posts
+group by estatus, post_year 
+order by post_year asc;
+## Agrupar por mas de una variable 

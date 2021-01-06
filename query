@@ -71,3 +71,19 @@ from posts
 group by estatus, post_year 
 order by post_year asc;
 ## Agrupar por mas de una variable 
+
+select monthname(fecha_publicacion) as posts_month, estatus, count(*) posts_quantity  ## Importante monthname
+FROM posts
+group by  estatus, posts_month
+order by posts_month; 
+
+
+select monthname(fecha_publicacion) as posts_month, estatus, count(*) posts_quantity
+FROM posts
+group by  estatus, posts_month
+having posts_quantity >1 ## El having funciona como el where solo que te deja filtrar antes de agrupar y ordenar 
+	
+order by posts_month; 
+
+
+

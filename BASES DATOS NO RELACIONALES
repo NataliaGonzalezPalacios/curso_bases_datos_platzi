@@ -1,0 +1,49 @@
+Tipos 
+
+Clave valor:  Hechas almacenar datos de manera raoida y extraerlos sirven para manejar diccionarios genial para utilizar JSON y XML  
+
+
+Clave - valor: Son ideales para almacenar y extraer datos con una clave única. Manejan los diccionarios de manera excepcional. Ejemplos: DynamoDB, Cassandra.
+Basadas en documentos: Son una implementación de clave valor que varía en la forma semiestructurada en que se trata la información. Ideal para almacenar datos JSON y XML. Ejemplos: MongoDB, Firestore.
+Basadas en grafos: Basadas en teoría de grafos, sirven para entidades que se encuentran interconectadas por múltiples relaciones. Ideales para almacenar relaciones complejas. Ejemplos: neo4j, TITAN.
+En memoria: Pueden ser de estructura variada, pero su ventaja radica en la velocidad, ya que al vivir en memoria la extracción de datos es casi inmediata. Ejemplos: Memcached, Redis.
+Optimizadas para búsquedas: Pueden ser de diversas estructuras, su ventaja radica en que se pueden hacer queries y búsquedas complejas de manera sencilla. Ejemplos: BigQuery, Elasticsearch.
+
+
+Firebase es un servicio de Google donde puedes tercerizar muchos elementos en la nube.
+Jerarquía de datos:
+
+Base de datos
+Colección
+Documento
+
+El modelo de bases de datos no relacionales es un poco más cercano al mundo real en su comportamiento.
+
+Las top level collections son las colecciones que se tienen de inmediato o entrada en el proyecto.
+Firebase es un servicio que tiene múltiples opciones y está pensado principalmente para aplicaciones móviles y web.
+
+Tipos de datos en Firestore:
+
+String: Cualquier tipo de valor alfanumérico
+
+Number: Soporta enteros y flotantes.
+
+Boolenan: Los clásicos valores True y False
+
+Map: Permite agregar un documento dentro de otro.
+
+Array: Permite agregar un conjunto de datos (soporte multi type) sin nombre e identificador.
+
+Null: Indica que no se ha definido un valor.
+
+Timestamp: Permite almacenar fechas (guarda el año, mes, día y hora).
+
+Geopoint: Guarda una localización geográfica (coordenadas latitud-longitud).
+
+Reference: Permite referencia un documento (relaciona dos documentos, no importa su colección).
+
+Recuerda:
+
+Tabla -> Colección
+
+Tupla -> Documento

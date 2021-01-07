@@ -1,0 +1,32 @@
+De pregunta a Query
+
+SELECT: Lo que quieres mostrar
+FROM: De dónde voy a tomar los datos
+WHERE: Los filtros de los datos que quieres mostrar
+GROUP BY: Los rubros por los que me interesa agrupar la información
+ORDER BY: El orden en que quiero presentar mi información
+HAVING: Los filtros que quiero que mis datos agrupados tengan
+LIMIT: La cantidad de registros que quiero
+GROUP_CONCAT: toma el resultado del query y lo pone como campo separado por comas.
+
+select posts.titulo, group_concat(nombre_etiqueta)  from posts
+inner  join posts_etiquetas on post_id = posts_etiquetas.post_id 
+inner join etiquetas on etiqueta_id = posts_etiquetas.etiqueta_id
+group by posts.id;
+
+select c.nombre_categoria, count(*) as cantidad_posts from categorias as c
+inner join posts as p on c.id = p.categoria_id
+group by c.id
+order by cantidad_posts desc;
+
+
+select u.nickname, count(*) cant_posts, group_concat(nombre_categoria)
+from usuarios as u 
+inner join posts as p on u.id = p.usuario_id
+inner join categorias as c on c.id	 = p.categoria_id
+group by u.id
+order by cant_posts desc;
+
+select * from usuarios as u 
+left join posts as p on u.id = p.usuario_id
+where  p.usuario_id is null; 
